@@ -1,0 +1,31 @@
+{
+    "name": "thinkingmik/acl-manager-laravel",
+    "description": "A Laravel 4 access control list package",
+    "keywords": [
+        "laravel",
+        "acl",
+        "permission",
+        "resource",
+        "access"
+    ],
+    "authors": [
+        {
+            "name": "Michele Andreoli",
+            "email": "michi.andreoli@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "laravel/framework": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "ThinKingMik\\AclManager\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "license": "MIT"
+}

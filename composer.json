@@ -1,6 +1,6 @@
 {
     "name": "thinkingmik/acl-manager-laravel",
-    "description": "A Laravel 4 access control list package",
+    "description": "A Laravel 5 access control list package",
     "keywords": [
         "laravel",
         "acl",
@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "laravel/framework": "4.2.*"
+        "laravel/framework": "5.0.*"
     },
     "autoload": {
         "classmap": [

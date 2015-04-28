@@ -21,7 +21,7 @@ class AclPolicyException extends AclException {
     public function __construct($parameter) {
 	$this->httpStatusCode = 401;
 	$this->errorType = 'acl_invalid_policy';
-        parent::__construct(\Lang::get('acl-manager-laravel::messages.acl_invalid_policy', array('name' => $parameter)));
+        parent::__construct(trans('acl-manager-laravel::messages.acl_invalid_policy'));
     }
 
 }

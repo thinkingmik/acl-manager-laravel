@@ -55,7 +55,7 @@ class AclBaseFilter {
      */
     protected function getTokenParam() {
         if (empty($this->tokenParam) && $this->tokenParam !== false) {
-            throw new AclServerErrorException(\Lang::get('acl-manager-laravel::messages.invalid_token_param'));
+            throw new AclServerErrorException(trans('acl-manager-laravel::messages.invalid_token_param'));
         }
 
         return $this->tokenParam;
@@ -76,7 +76,7 @@ class AclBaseFilter {
      */
     protected function getCallback() {
         if (($this->tokenParam !== false || !empty($this->tokenParam)) && (is_null($this->callback) || !is_callable($this->callback))) {
-            throw new AclServerErrorException(\Lang::get('acl-manager-laravel::messages.invalid_callback'));
+            throw new AclServerErrorException(trans('acl-manager-laravel::messages.invalid_callback'));
         }
 
         return $this->callback;

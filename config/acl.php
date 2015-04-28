@@ -19,7 +19,7 @@ return [
       | If you don't want cache the queries you can set this parameter to 0 minutes.
       |
      */
-    'cache_results' => 0,
+    'cache_results' => 5,
     /*
       |--------------------------------------------------------------------------
       | Access token param name, for RESTful apis

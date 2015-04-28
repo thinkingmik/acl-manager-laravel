@@ -31,12 +31,12 @@ class CreateAclRolesPoliciesTable extends Migration {
                   ->references('id')->on('acl_roles')
                   ->onUpdate('cascade')
 				  ->onDelete('cascade');
-			
+
             $table->foreign('resource_id')
                   ->references('id')->on('acl_resources')
                   ->onUpdate('cascade')
 				  ->onDelete('cascade');
-				  
+
 			$table->foreign('permission_id')
                   ->references('id')->on('acl_permissions')
                   ->onUpdate('cascade')

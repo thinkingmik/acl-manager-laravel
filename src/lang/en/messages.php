@@ -9,8 +9,8 @@
  */
 
 return array(
-	'acl_query_error' => 'An error occurred on a query to database: :error',
-	'acl_invalid_policy' => 'The requested resource is not accessible. Check if user has <b>:name</b> policy.',
+	'acl_query_error' => 'An error occurred on a query to database.',
+	'acl_invalid_policy' => 'The requested resource is not accessible. Check if user has the correct policy.',
 	'invalid_callback' => 'Null or non-callable ACL callback set in config file.',
 	'invalid_token_param' => 'Null or empty ACL access token param name set.',
 	'userid_not_found' => 'Unable to verify ACL policies. User ID not found in session',

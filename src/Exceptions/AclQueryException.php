@@ -21,7 +21,7 @@ class AclQueryException extends AclException {
     public function __construct($parameter) {
 	$this->httpStatusCode = 500;
 	$this->errorType = 'acl_query_error';
-        parent::__construct(\Lang::get('acl-manager-laravel::messages.acl_query_error', array('error' => $parameter)));
+        parent::__construct(trans('acl-manager-laravel::messages.acl_query_error'));
     }
 
 }

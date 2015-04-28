@@ -42,8 +42,8 @@ class AclPolicyFilter extends AclBaseFilter {
         if (!empty($userId)) {
             $ret = $this->acl->isRouteAllowed($userId, $value);
         } else {
-            $msg = ($this->tokenParam !== false) ? ' ' . \Lang::get('acl-manager-laravel::messages.token_not_found') : '.';
-            throw new AclServerErrorException(\Lang::get('acl-manager-laravel::messages.userid_not_found') . $msg);
+            $msg = ($this->tokenParam !== false) ? ' ' . trans('acl-manager-laravel::messages.token_not_found') : '.';
+            throw new AclServerErrorException(trans('acl-manager-laravel::messages.userid_not_found') . $msg);
         }
 
         if (!$ret) {

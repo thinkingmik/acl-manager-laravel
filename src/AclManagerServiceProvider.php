@@ -10,9 +10,7 @@
 
 namespace ThinKingMik\AclManager;
 
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\ServiceProvider;
-use ThinKingMik\AclManager\Exceptions\AclException;
 use ThinKingMik\AclManager\Filters\AclPolicyFilter;
 
 class AclManagerServiceProvider extends ServiceProvider {
@@ -30,8 +28,8 @@ class AclManagerServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot() {
-        $this->package('thinkingmik/acl-manager-laravel');
-
+        $this->loadViewsFrom(__DIR__ . '/views', 'acl-manager-laravel');
+        $this->loadTranslationsFrom(__DIR__ . '/lang', 'acl-manager-laravel');
         $this->bootFilters();
     }
 
@@ -49,9 +47,30 @@ class AclManagerServiceProvider extends ServiceProvider {
      * @return void
      */
     public function register() {
-        $this->registerErrorHandlers();
+        $this->registerAssets();
         $this->registerAclManager();
         $this->registerFilterBindings();
+    }
+
+    /**
+     * Register the assets to be published
+     * @return void
+     */
+    public function registerAssets()
+    {
+        $configPath = __DIR__ . '/../config/acl.php';
+        $mFrom = __DIR__ . '/../migrations/';
+        $mTo = $this->app['path.database'] . '/migrations/';
+        $this->mergeConfigFrom($configPath, 'acl');
+        $this->publishes([$configPath => config_path('acl.php')], 'config');
+        $this->publishes([
+            $mFrom . '2014_10_24_102511_create_acl_resources_table.php' => $mTo . '2015_04_25_000001_create_acl_resources_table.php',
+            $mFrom . '2014_10_24_102554_create_acl_roles_table.php' => $mTo . '2015_04_25_000002_create_acl_roles_table.php',
+            $mFrom . '2014_10_24_102615_create_acl_permissions_table.php' => $mTo . '2015_04_25_000003_create_acl_permissions_table.php',
+            $mFrom . '2014_10_24_102703_create_acl_roles_policies_table.php' => $mTo . '2015_04_25_000004_create_acl_roles_policies_table.php',
+            $mFrom . '2014_10_24_102717_create_acl_users_policies_table.php' => $mTo . '2015_04_25_000005_create_acl_users_policies_table.php',
+            $mFrom . '2014_10_24_102730_create_acl_users_roles_table.php' => $mTo . '2015_04_25_000006_create_acl_users_roles_table.php'
+        ], 'migrations');
     }
 
     /**
@@ -76,9 +95,9 @@ class AclManagerServiceProvider extends ServiceProvider {
      */
     public function registerFilterBindings() {
         $this->app->bindShared('ThinKingMik\AclManager\Filters\AclPolicyFilter', function ($app) {
-            $param = $app['config']->get('acl-manager-laravel::acl.access_token_param');
-            $callback = $app['config']->get('acl-manager-laravel::acl.callback');
             $filter = new AclPolicyFilter($app['acl-manager.acl']);
+            $param = $app['config']->get('acl.access_token_param');
+            $callback = $app['config']->get('acl.callback');
             $filter->setTokenParam($param);
             $filter->setCallback($callback);
             return $filter;
@@ -93,28 +112,4 @@ class AclManagerServiceProvider extends ServiceProvider {
     public function provides() {
         return array('acl-manager.acl');
     }
-
-    /**
-     * Register the AclManager error handlers
-     * @return void
-     */
-    private function registerErrorHandlers() {
-        $this->app->error(function(AclException $ex) {
-            if (\Request::ajax() && \Request::wantsJson()) {
-                return new JsonResponse([
-                    'error' => $ex->errorType,
-                    'error_description' => $ex->getMessage()
-                        ], $ex->httpStatusCode, $ex->getHttpHeaders()
-                );
-            }
-
-            return \View::make('acl-manager-laravel::acl_error', array(
-                        'header' => $ex->getHttpHeaders()[0],
-                        'code' => $ex->httpStatusCode,
-                        'error' => $ex->errorType,
-                        'message' => $ex->getMessage()
-            ));
-        });
-    }
-
 }

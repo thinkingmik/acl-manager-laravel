@@ -9,8 +9,8 @@
  */
 
 return array(
-	'acl_query_error' => 'Errore durante l\'interrogazione alla base dati: :error',
-	'acl_invalid_policy' => 'Non puoi accedere alla risorsa. Controlla se l\'utente possiede il permesso <b>:name</b>.',
+	'acl_query_error' => 'Errore durante l\'interrogazione alla base dati.',
+	'acl_invalid_policy' => 'Non puoi accedere alla risorsa. Controlla se l\'utente ha il permesso corretto.',
 	'invalid_callback' => 'ACL callback non impostata correttamente nel file di configurazione.',
 	'invalid_token_param' => 'Parametro per il token non impostato correttamente nel file di configurazione.',
 	'userid_not_found' => 'Impossibile verificare i permessi. ID utente non trovato in sessione',

@@ -1,4 +1,4 @@
-PHP Acl Manager for Laravel
+PHP Acl Manager for Laravel 4
 ================
 
 [![Latest Version](http://img.shields.io/github/release/thinkingmik/acl-manager-laravel.svg?style=flat-square)](https://packagist.org/packages/thinkingmik/acl-manager-laravel)

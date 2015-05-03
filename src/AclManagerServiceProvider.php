@@ -58,8 +58,8 @@ class AclManagerServiceProvider extends ServiceProvider {
      */
     public function registerAssets()
     {
-        $configPath = __DIR__ . '/../config/acl.php';
-        $mFrom = __DIR__ . '/../migrations/';
+        $configPath = __DIR__ . '/config/acl.php';
+        $mFrom = __DIR__ . '/migrations/';
         $mTo = $this->app['path.database'] . '/migrations/';
         $this->mergeConfigFrom($configPath, 'acl');
         $this->publishes([$configPath => config_path('acl.php')], 'config');

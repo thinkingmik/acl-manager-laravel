@@ -23,7 +23,7 @@ PHP Acl Manager for Laravel 4
 ## Introduction
 
 Adds ACL to Laravel 4.
-This ACL solutions for Laravel 4 store the permissions rules in the database.
+This ACL solution for Laravel 4 is useful when you need to store policy rules or users' roles into a database.
 ACL Manager are composed by three entities:
 
 1. Roles
@@ -37,14 +37,14 @@ Add the following line to the `require` section of `composer.json`:
 ```json
 {
     "require": {
-        "thinkingmik/acl-manager-laravel": "1.*@dev"
+        "thinkingmik/acl-manager-laravel": "1.*"
     }
 }
 ```
 ## Setup
 
-1. Add `'ThinKingMik\AclManager\AclManagerServiceProvider',` to the service provider list in `app/config/app.php`.
-2. Add `'Acl' => 'ThinKingMik\AclManager\Facades\AclManagerFacade',` to the list of aliases in `app/config/app.php`.
+1. Add `'ThinKingMik\AclManager\AclManagerServiceProvider',` to the service **provider** list in `app/config/app.php`.
+2. Add `'Acl' => 'ThinKingMik\AclManager\Facades\AclManagerFacade',` to the list of **aliases** in `app/config/app.php`.
 
 ## Configuration
 

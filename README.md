@@ -23,7 +23,7 @@ PHP Acl Manager for Laravel 4
 ## Introduction
 
 Adds ACL to Laravel 4.
-This ACL solution for Laravel 4 is useful when you need to store policy rules or users' roles into a database.
+This ACL solution for Laravel is useful when you need to store policy rules or users' roles into a database.
 ACL Manager are composed by three entities:
 
 1. Roles
@@ -37,7 +37,7 @@ Add the following line to the `require` section of `composer.json`:
 ```json
 {
     "require": {
-        "thinkingmik/acl-manager-laravel": "1.*"
+        "thinkingmik/acl-manager-laravel": "1.x"
     }
 }
 ```
@@ -48,7 +48,7 @@ Add the following line to the `require` section of `composer.json`:
 
 ## Configuration
 
-In order to use the Acl manager publish its configuration first
+In order to use the Acl Manager publish its configuration first
 
 ```
 php artisan config:publish thinkingmik/acl-manager-laravel
@@ -58,7 +58,7 @@ Afterwards edit the file ```app/config/packages/thinkingmik/acl-manager-laravel/
 
 ### Migration
 
-This package comes with all the migrations you need to run a full featured Acl manager.
+This package comes with all the migrations you need to run a full featured Acl Manager.
 First of all you need to check the reference to the user table name:
 
 * Check the users table name of your Laravel installation in `app/config/auth.php` at the section:

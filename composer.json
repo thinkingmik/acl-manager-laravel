@@ -1,6 +1,6 @@
 {
     "name": "thinkingmik/acl-manager-laravel",
-    "description": "A Laravel 4 access control list package",
+    "description": "A Laravel access control list package",
     "keywords": [
         "laravel",
         "acl",

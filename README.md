@@ -5,7 +5,6 @@ PHP ACL Manager for Laravel 5
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/thinkingmik/acl-manager-laravel/master.svg?style=flat-square)](https://travis-ci.org/thinkingmik/acl-manager-laravel)
 [![Code Quality](https://img.shields.io/scrutinizer/g/thinkingmik/acl-manager-laravel.svg?style=flat-square)](https://scrutinizer-ci.com/g/thinkingmik/acl-manager-laravel/?branch=master)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/thinkingmik/acl-manager-laravel.svg?style=flat-square)](https://scrutinizer-ci.com/g/thinkingmik/acl-manager-laravel/code-structure)
 [![Total Downloads](https://img.shields.io/packagist/dt/thinkingmik/acl-manager-laravel.svg?style=flat-square)](https://packagist.org/packages/thinkingmik/acl-manager-laravel)
 
 ## Summary
@@ -109,7 +108,7 @@ Edit the file ```config/acl.php``` to suit your needs.
 
 ### Routing
 
-You can use Acl manager in routes as a filter
+You can use Acl Manager in routes as a filter
 ```php
 Route::get('/private', array('before' => 'auth|acl:admin.*', 'uses' => function() {
 
@@ -117,7 +116,7 @@ Route::get('/private', array('before' => 'auth|acl:admin.*', 'uses' => function(
 ```
 
 All checks are made on `user_id` attribute retrieved from session.
-You can define many different `acl:` filter:
+You can define many different `acl:` filters:
 ```php
 acl:role.resource.permission //check if logged user has role and the permission on resource
 acl:*.resource.permission    //check if logged user has permission on resource
@@ -132,7 +131,7 @@ acl:admin.*;guest.*
 
 ### Facade
 
-The `AclManager` is available through the Facade `Acl` or through the acl service in the IOC container.
+The Acl Manager is available through the Facade `Acl` or through the acl service in the IOC container.
 The methods available are:
 ```php
 /**

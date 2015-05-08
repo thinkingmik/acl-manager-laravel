@@ -29,7 +29,8 @@ class AclQueryUtils {
         try {
             $objects = self::getArray($objects);
             $ids = array();
-            for ($i = 0; $i < count($objects); $i++) {
+            $max = count($objects);
+            for ($i = 0; $i < $max; $i++) {
                 if (gettype($objects[$i]) === 'object') {
                     array_push($ids, $objects[$i]->$idProperty);
                 } else {
@@ -46,9 +47,12 @@ class AclQueryUtils {
         try {
             $array = array();
             $date = (new \DateTime())->format('Y-m-d H:i:s');
-            for ($i = 0; $i < count($subjects); $i++) {
-                for ($k = 0; $k < count($resources); $k++) {
-                    for ($j = 0; $j < count($permissions); $j++) {
+            $maxA = count($subjects);
+            for ($i = 0; $i < $maxA; $i++) {
+                $maxB = count($resources);
+                for ($k = 0; $k < $maxB; $k++) {
+                    $maxC = count($permissions);
+                    for ($j = 0; $j < $maxC; $j++) {
                         array_push($array, array(
                             $subjectField => $subjects[$i],
                             'resource_id' => $resources[$k],
@@ -70,8 +74,10 @@ class AclQueryUtils {
         try {
             $array = array();
             $date = (new \DateTime())->format('Y-m-d H:i:s');
-            for ($i = 0; $i < count($users); $i++) {
-                for ($k = 0; $k < count($roles); $k++) {
+            $maxA = count($users);
+            for ($i = 0; $i < $maxA; $i++) {
+                $maxB = count($roles);
+                for ($k = 0; $k < $maxB; $k++) {
                     array_push($array, array(
                         'user_id' => $users[$i],
                         'role_id' => $roles[$k],
@@ -91,7 +97,8 @@ class AclQueryUtils {
         try {
             $list = self::convertString2Array($policy, ';');
             $policies = array();
-            for ($i = 0; $i < count($list); $i++) {
+            $max = count($list);
+            for ($i = 0; $i < $max; $i++) {
                 $policy = $list[$i];
                 $split = explode('.', $policy);
 
@@ -132,7 +139,8 @@ class AclQueryUtils {
         try {
             $ret = array();
             $split = explode($separator, $text);
-            for ($i = 0; $i < count($split); $i++) {
+            $max = count($split);
+            for ($i = 0; $i < $max; $i++) {
                 if (trim($split[$i]) !== '') {
                     $ret[$i] = trim($split[$i]);
                 }

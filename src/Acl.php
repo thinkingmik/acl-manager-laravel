@@ -40,7 +40,8 @@ class Acl {
         $policies = AclQueryUtils::getPoliciesFromFilter($policy);
         $query = $this->selector->selectAllByUserId($userId);
 
-        for ($i = 0; $i < count($query); $i++) {
+        $max = count($query);
+        for ($i = 0; $i < $max; $i++) {
             $record = $query[$i];
             $role = trim($record->role);
             $resource = trim($record->resource);

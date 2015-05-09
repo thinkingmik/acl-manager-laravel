@@ -7,9 +7,15 @@ PHP ACL Manager for Laravel 5
 [![Code Quality](https://img.shields.io/scrutinizer/g/thinkingmik/acl-manager-laravel.svg?style=flat-square)](https://scrutinizer-ci.com/g/thinkingmik/acl-manager-laravel/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/thinkingmik/acl-manager-laravel.svg?style=flat-square)](https://packagist.org/packages/thinkingmik/acl-manager-laravel)
 
+## Versions
+
+ Laravel  | ACL Manager  | PHP 
+:---------|:-------------|:----
+ 4.2.x    | [1.x](https://github.com/thinkingmik/acl-manager-laravel/tree/1.x)          |>= 5.4
+ 5.0.x    | [2.x](https://github.com/thinkingmik/acl-manager-laravel)          |>= 5.4
+
 ## Summary
 
-- [Versions](#versions)
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Setup](#setup)
@@ -20,13 +26,6 @@ PHP ACL Manager for Laravel 5
   - [Routing](#routing)
   - [Facade](#facade)
 - [License](#license)
-
-## Versions
-
- Laravel  | ACL Manager  | PHP 
-:---------|:-------------|:----
- 4.2.x    | [1.x](https://github.com/thinkingmik/acl-manager-laravel/tree/1.x)          |>= 5.4
- 5.0.x    | [2.x](https://github.com/thinkingmik/acl-manager-laravel)          |>= 5.4
 
 ## Introduction
 

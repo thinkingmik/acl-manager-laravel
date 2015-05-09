@@ -13,7 +13,7 @@ PHP Acl Manager for Laravel 4
 - [Installation](#installation)
 - [Setup](#setup)
 - [Configuration](#configuration)
-  - [Migration](#migration)
+  - [Migrations](#migrations)
 - [Usage](#usage)
   - [Routing](#routing)
   - [Facade](#facade)
@@ -55,7 +55,7 @@ php artisan config:publish thinkingmik/acl-manager-laravel
 
 Afterwards edit the file ```app/config/packages/thinkingmik/acl-manager-laravel/acl.php``` to suit your needs.
 
-### Migration
+### Migrations
 
 This package comes with all the migrations you need to run a full featured Acl Manager.
 First of all you need to check the reference to the user table name:

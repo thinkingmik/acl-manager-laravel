@@ -54,7 +54,7 @@ Add the following line to the `require` section of `composer.json`:
 2. Add `'Acl' => 'ThinKingMik\AclManager\Facades\AclManagerFacade',` into the list of **aliases** in `config/app.php`.
 3. Add `'ThinKingMik\AclManager\Middleware\AclManagerExceptionHandler',` into the list of **middlewere** in `app/Http/Kernel.php`.
 
-## Migration and configuration file<a name="deploy"></a>
+## Migrations and configuration file<a name="deploy"></a>
 
 In order to use the Acl Manager publish its configuration and migrations first
 

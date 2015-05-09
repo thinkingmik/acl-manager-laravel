@@ -3,13 +3,10 @@ PHP Acl Manager for Laravel 4
 
 [![Latest Version](http://img.shields.io/github/release/thinkingmik/acl-manager-laravel.svg?style=flat-square)](https://packagist.org/packages/thinkingmik/acl-manager-laravel)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-<<<<<<< HEAD
 [![Build Status](https://img.shields.io/travis/thinkingmik/acl-manager-laravel/master.svg?style=flat-square)](https://travis-ci.org/thinkingmik/acl-manager-laravel)
 [![Code Quality](https://img.shields.io/scrutinizer/g/thinkingmik/acl-manager-laravel.svg?style=flat-square)](https://scrutinizer-ci.com/g/thinkingmik/acl-manager-laravel/?branch=1.x)
-=======
 [![Build Status](https://img.shields.io/travis/thinkingmik/acl-manager-laravel/1.x.svg?style=flat-square)](https://travis-ci.org/thinkingmik/acl-manager-laravel)
 [![Code Quality](https://img.shields.io/scrutinizer/g/thinkingmik/acl-manager-laravel.svg?style=flat-square)](https://scrutinizer-ci.com/g/thinkingmik/acl-manager-laravel/?branch=master)
->>>>>>> updated doc
 [![Total Downloads](https://img.shields.io/packagist/dt/thinkingmik/acl-manager-laravel.svg?style=flat-square)](https://packagist.org/packages/thinkingmik/acl-manager-laravel)
 
 ## Summary
